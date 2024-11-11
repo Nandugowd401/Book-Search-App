@@ -1,0 +1,235 @@
+/* General Styles */
+.booklist, .book-details {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+}
+
+.booklist-content {
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+}
+
+.book-item {
+    padding: 2rem 1.5rem;
+    border-radius: 4px;
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    opacity: 0; /* Ensures animation visibility */
+    animation: slideUp 0.6s ease forwards;
+}
+
+/* Hover effect for book item */
+.book-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    transform: scale(1.05);
+}
+
+.book-item-img img {
+    max-width: 180px;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.book-item-info {
+    margin-top: 1.5rem;
+}
+
+.book-item-info-item.title {
+    line-height: 1.4;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+
+.book-item-info-item.author {
+    line-height: 1.4;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.book-item-info-item span {
+    opacity: 0.8;
+}
+
+.book-item-info-item.author span:first-child {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.book-item-info-item.publish-year {
+    opacity: 0.6;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.book-item-info-item .more-info-btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.book-item-info-item .more-info-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Grid */
+@media screen and (min-width: 600px) {
+    .booklist-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .booklist-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .book-item-img img {
+        max-width: 150px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .booklist-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .book-item-img img {
+        max-width: 180px;
+    }
+}
+
+/* Animation */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation delay */
+.book-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.book-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.book-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.book-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background-color: #f4f4fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.section-title h2 {
+    font-size: 3.5rem;
+    color: #4c4c9d;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1.5px;
+}
+
+.about-content {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease-in-out;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    color: #333;
+    padding: 1.5rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: #2e2e62;
+    font-family: 'Merriweather', serif;
+}
+
+.about-text p {
+    font-size: 1.4rem;
+    line-height: 2;
+    margin-bottom: 1.8rem;
+    color: #444;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.about-address {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 2rem;
+    line-height: 1.9;
+}
+
+@media screen and (min-width: 800px) {
+    .about-content {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3rem;
+    }
+
+    .about-img img {
+        width: 85%;
+    }
+
+    .about-text p {
+        font-size: 1.6rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

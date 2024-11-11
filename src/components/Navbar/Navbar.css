@@ -1,0 +1,166 @@
+/* General Navbar Styling */
+.navbar {
+    padding: 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
+}
+
+/* Brand Styling with "BookFinder" Spacing and Logo */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    width: auto; /* Ensures the width of the brand element adjusts to content */
+}
+
+.navbar-brand img {
+    max-width: 90px; /* Adjusts the logo size */
+    height: auto;
+    margin-right: 1rem; /* Adds spacing between the logo and brand name */
+}
+
+.bookhub-text {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #9b59b6, #8e44ad); /* Purple gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s ease infinite;
+    white-space: nowrap; /* Prevents text from wrapping onto the next line */
+    display: inline-block;
+}
+
+/* Animation for the gradient background */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar Toggler Button */
+.navbar-toggler-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Navbar Collapse (Mobile) */
+.navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 20px 0 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.show-navbar-collapse {
+    transform: translateX(0);
+}
+
+/* Navbar Links Styling (Home, About buttons) */
+.nav-item {
+    margin-bottom: 2rem;
+}
+
+.home-about-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #9b59b6; /* Purple button background */
+    color: #fff; /* White text */
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover & Active Animations for Home and About buttons */
+.home-about-button:hover {
+    background-color: #8e44ad;  /* Darker purple on hover */
+    transform: translateY(-5px);  /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home-about-button:active {
+    transform: translateY(2px); /* Button slightly presses down when clicked */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar Collapse for Desktop */
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-nav li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Desktop View */
+@media screen and (min-width: 992px) {
+    .navbar-collapse {
+        position: relative;
+        transform: translateX(0);
+        height: auto;
+        padding: 0;
+        /* background-color: transparent; */
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .navbar-toggler-btn {
+        display: none;
+    }
+
+    .nav-item {
+        margin: 0;
+        margin-left: 2rem;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .home-about-button {
+        padding: 1rem 2rem;
+        background-color: #9b59b6;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .home-about-button:hover {
+        background-color: #8e44ad;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-about-button:active {
+        transform: translateY(2px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+}
